@@ -32,7 +32,7 @@ router.get('/',async (req,res)=>{
     }
 });
 
-router.get('/:id',async (req,res)=>{
+router.get('/details/:id',async (req,res)=>{
     try {
         const {id} = req.params;
         const book = await Book.findById(id);
