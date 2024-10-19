@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -11,10 +12,10 @@ const ShowBook = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:5555/books/${id}`)
+    axios.get(`http://localhost:5555/books/details/${id}`)
       .then((res) => {
-        console.log("API Response:", res.data);
-        setBook(res.data.book || res.data.data);
+        console.log("API Response:", res.data.book);
+        setBook(res.data.book);
         setLoading(false);
       })
       .catch((err) => {
