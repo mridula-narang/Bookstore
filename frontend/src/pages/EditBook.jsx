@@ -13,7 +13,7 @@ const EditBook = () => {
   const {id} = useParams();
   useEffect(()=>{
     setLoading(true);
-    axios.get(`http://localhost:5555/books/details/${id}`)
+    axios.get(`https://bookstore-app-urih.onrender.com/books/details/${id}`)
     .then((res)=>{
       setTitle(res.data.book.title);
       setAuthor(res.data.book.author);
