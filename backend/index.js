@@ -26,9 +26,11 @@ app.use(cors({
 mongoose.connect('mongodb+srv://mridulagn123:Dauntless1234@cluster0.1anp1bv.mongodb.net/books-collection?retryWrites=true&w=majority&appName=Cluster0')
     .then(() => {
         console.log('Connected to MongoDB');
-        app.listen(5555, () => {
-            console.log("App is listening at port:", 5555);
-        });
+        const PORT = process.env.PORT || 5555;
+    app.listen(PORT, () => {
+        console.log(`App is listening at port: ${PORT}`);
+})
+.catch(err => console.error('Could not connect to MongoDB', err));
     })
     .catch(err => console.error('Could not connect to MongoDB', err));
 
