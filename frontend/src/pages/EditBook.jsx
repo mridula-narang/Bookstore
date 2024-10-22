@@ -15,7 +15,6 @@ const EditBook = () => {
     setLoading(true);
     axios.get(`http://localhost:5555/books/details/${id}`)
     .then((res)=>{
-      console.log("API Response:",res.data.book);
       setTitle(res.data.book.title);
       setAuthor(res.data.book.author);
       setPublishYear(res.data.book.publishYear);
